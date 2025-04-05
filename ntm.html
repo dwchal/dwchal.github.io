@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTM Antimicrobial Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff2d95;
+            --neon-blue: #2de2e6;
+            --neon-purple: #9d4edd;
+            --dark-bg: #0b1026;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--dark-bg);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(transparent 0%, rgba(11, 16, 38, 0.5) 95%),
+                linear-gradient(90deg, rgba(255, 45, 149, 0.1) 0%, transparent 100%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: 
+                linear-gradient(transparent 65%, rgba(11, 16, 38, 0.8) 75%, var(--dark-bg) 85%),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    transparent 1%,
+                    rgba(255, 45, 149, 0.1) 1.5%,
+                    transparent 2%
+                ),
+                repeating-linear-gradient(
+                    180deg,
+                    transparent 0%,
+                    transparent 3%,
+                    rgba(45, 226, 230, 0.1) 3.5%,
+                    transparent 4%
+                );
+            transform: perspective(100vh) rotateX(60deg) translateY(-50%) translateZ(0);
+            transform-origin: 50% 0;
+            z-index: -1;
+            animation: grid-move 15s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% {
+                transform: perspective(100vh) rotateX(60deg) translateY(-50%) translateZ(0);
+            }
+            100% {
+                transform: perspective(100vh) rotateX(60deg) translateY(0%) translateZ(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+            width: 95%;
+            z-index: 1;
+            background: rgba(11, 16, 38, 0.7);
+            border-radius: 8px;
+            border: 2px solid var(--neon-purple);
+            box-shadow: 
+                0 0 10px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--neon-pink);
+            text-shadow: 
+                0 0 5px var(--neon-pink),
+                0 0 10px var(--neon-pink);
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            text-shadow: 0 0 5px var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            text-shadow: 
+                0 0 5px var(--neon-blue),
+                0 0 10px var(--neon-blue),
+                0 0 20px var(--neon-blue);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0;
+            background: rgba(11, 16, 38, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--neon-purple);
+        }
+
+        th {
+            background: rgba(157, 78, 221, 0.2);
+            color: var(--neon-blue);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        td {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        tr:hover td {
+            background: rgba(157, 78, 221, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Table 4. Summary of Antimicrobial Dosing, Target Therapeutic Drug Monitoring Values, Adverse Effects, Drug Interactions, and Respective Management</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Antimicrobial</th>
+                    <th>Dosing</th>
+                    <th>Therapeutic Drug Monitoring Targets</th>
+                    <th>Adverse Effects and Drug Interactions</th>
+                    <th>Suggested Monitoring and Management</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Azithromycin</td>
+                    <td>250–500 mg PO/IV daily; 500 mg 3x weekly</td>
+                    <td>Cmax: 0.2–0.7 µg/mL</td>
+                    <td>GI intolerance, reversible hearing loss, tinnitus, QTc prolongation, hypersensitivity, transient transaminitis</td>
+                    <td>Clinical evaluation, LFTs at baseline and every 1–2 months, ECG if QTc-prolonging agents used. Hold for significant adverse events.</td>
+                </tr>
+                <tr>
+                    <td>Clarithromycin</td>
+                    <td>500 mg PO twice daily</td>
+                    <td>Cmax: 2–5 µg/mL</td>
+                    <td>GI intolerance, reversible hearing loss, tinnitus, QTc prolongation, CYP3A4 inhibition, drug interactions, hepatotoxicity (rare)</td>
+                    <td>Clinical evaluation, LFTs at baseline and every 1–2 months, ECG if combined with QTc-prolonging agents. Adjust medications accordingly.</td>
+                </tr>
+                <tr>
+                    <td>Rifampin</td>
+                    <td>10 mg/kg PO daily (max 600 mg)</td>
+                    <td>Cmax: 8–24 µg/mL</td>
+                    <td>Hepatotoxicity, drug interactions (CYP inducer), thrombocytopenia, GI upset, orange discoloration of secretions</td>
+                    <td>Clinical evaluation, LFTs every 1–2 months. Monitor for drug interactions.</td>
+                </tr>
+                <tr>
+                    <td>Rifabutin</td>
+                    <td>300 mg PO daily (dose adjust with interactions)</td>
+                    <td>Cmax: 0.4–0.6 µg/mL</td>
+                    <td>Neutropenia, uveitis, hepatotoxicity, drug interactions, orange discoloration of secretions</td>
+                    <td>Clinical evaluation, CBC and LFTs every 1–2 months. Dose adjust with interacting agents.</td>
+                </tr>
+                <tr>
+                    <td>Ethambutol</td>
+                    <td>15–25 mg/kg PO daily</td>
+                    <td>Cmax: 2–6 µg/mL</td>
+                    <td>Optic neuritis, rash, arthralgia, hepatotoxicity</td>
+                    <td>Clinical evaluation, baseline and monthly visual acuity and color vision testing, LFTs every 1–2 months.</td>
+                </tr>
+                <tr>
+                    <td>Amikacin (IV)</td>
+                    <td>15–20 mg/kg IV daily or 3x weekly</td>
+                    <td>Peak: 35–45 µg/mL; Trough: &lt;5 µg/mL</td>
+                    <td>Nephrotoxicity, ototoxicity, vestibular toxicity</td>
+                    <td>Clinical evaluation, baseline and periodic audiometry, renal function, monitor serum levels.</td>
+                </tr>
+                <tr>
+                    <td>Amikacin (Inhaled)</td>
+                    <td>590 mg nebulized daily</td>
+                    <td>Not applicable</td>
+                    <td>Ototoxicity, bronchospasm, oral candidiasis, dysphonia, hemoptysis</td>
+                    <td>Baseline spirometry, monitor oral cavity discomfort, rechallenge after 1-week holiday if tolerated.</td>
+                </tr>
+                <tr>
+                    <td>Streptomycin</td>
+                    <td>10–15 mg/kg IV daily or 3x weekly</td>
+                    <td>Peak: 20–30 µg/mL; Trough: &lt;2 µg/mL</td>
+                    <td>Nephrotoxicity, ototoxicity, vestibular toxicity</td>
+                    <td>Baseline audiometry, renal function, monitor peaks/troughs, adjust dosing based on renal function.</td>
+                </tr>
+                <tr>
+                    <td>Moxifloxacin</td>
+                    <td>400 mg PO/IV daily</td>
+                    <td>Cmax: 3–5 µg/mL</td>
+                    <td>QTc prolongation, hepatitis, nausea, vomiting, tendinitis, aortic dissection (rare)</td>
+                    <td>Clinical evaluation, ECG at baseline and regularly, Cr and LFTs every 1–2 months, electrolyte management.</td>
+                </tr>
+                <tr>
+                    <td>Bedaquiline</td>
+                    <td>400 mg PO daily for 14 days, then 200 mg three times weekly</td>
+                    <td>QTc prolongation monitoring</td>
+                    <td>QTc prolongation, hepatitis, elevated amylase, nausea, rash, joint pain</td>
+                    <td>Clinical evaluation, ECG baseline and periodically, LFTs every 1–2 months, electrolyte management.</td>
+                </tr>
+                <tr>
+                    <td>Linezolid</td>
+                    <td>600 mg PO/IV twice daily</td>
+                    <td>Cmax: 12–26 µg/mL</td>
+                    <td>Myelosuppression, peripheral/optic neuropathy, serotonin syndrome</td>
+                    <td>Clinical evaluation, CBC weekly, monitor for neuropathy, monitor for serotonin syndrome if combined with serotonergic agents.</td>
+                </tr>
+                <tr>
+                    <td>Clofazimine</td>
+                    <td>100 mg PO daily</td>
+                    <td>Not established</td>
+                    <td>Skin discoloration, GI intolerance, QTc prolongation, hepatotoxicity</td>
+                    <td>Clinical evaluation, ECG baseline and periodically, LFTs every 1–2 months.</td>
+                </tr>
+                <tr>
+                    <td>Trimethoprim-Sulfamethoxazole (TMP-SMX)</td>
+                    <td>800/160 mg PO/IV twice daily</td>
+                    <td>Adjust based on renal function</td>
+                    <td>GI intolerance, cytopenias, hyperkalemia, renal injury, hypersensitivity, hepatitis</td>
+                    <td>Clinical evaluation, Cr, electrolytes, LFTs, and CBC monthly. Discontinue for severe adverse events.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
